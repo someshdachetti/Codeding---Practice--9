@@ -31,7 +31,7 @@ app.post("/register/", async (request, response) => {
   let { username, name, password, gender, location } = request.body;
   const bcryptPassword = await bcrypt.hash(password, 10);
 
-  let x = `SELECT * FROM user  WHERE username = '${username}';`;
+  const x = `SELECT * FROM user  WHERE username = '${username}';`;
 
   let user_name = await DATABASE.get(x);
 
